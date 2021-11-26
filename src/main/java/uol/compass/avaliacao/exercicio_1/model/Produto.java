@@ -7,4 +7,20 @@ public class Produto {
     private String descricao;
     private Integer quantidade;
     private Double preco;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
 }
