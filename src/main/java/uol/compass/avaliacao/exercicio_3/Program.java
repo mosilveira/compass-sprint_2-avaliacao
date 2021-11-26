@@ -4,7 +4,7 @@ import uol.compass.avaliacao.exercicio_3.model.Emoticon;
 
 import java.util.Scanner;
 
-public class TestaContador {
+public class Program {
 
     public static void main(String[] args) {
 
