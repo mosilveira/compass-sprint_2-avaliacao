@@ -36,10 +36,10 @@ public class Program {
                 case 3:
                     produtoController.remove(2);
                     break;
-                case 0:
-                    break;
                 default:
-                    System.out.println("Essa opção não existe! Tente novamente.");
+                    if (choice != 0) {
+                        System.out.println("\nEssa opção não existe! Tente novamente.");
+                    }
             }
 
             System.out.println("\nSituação atual:");
