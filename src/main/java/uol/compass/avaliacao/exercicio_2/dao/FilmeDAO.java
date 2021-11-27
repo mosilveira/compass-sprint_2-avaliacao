@@ -18,6 +18,7 @@ public class FilmeDAO {
         this.connection = connection;
     }
 
+    // Método para listar todos os filmes cadastrados
     public List<Filme> getList() {
         List<Filme> filmes = new ArrayList<>();
         String sql = "SELECT nome, descricao, ano FROM filmes";
@@ -37,6 +38,7 @@ public class FilmeDAO {
         return filmes;
     }
 
+    // Método para salvar os filmes no banco de dados
     public void create(Filme filme) {
         String sql = "INSERT INTO filmes (nome, descricao, ano) VALUES (?, ?, ?)";
 

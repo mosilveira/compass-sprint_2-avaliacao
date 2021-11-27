@@ -10,6 +10,7 @@ public class Emoticon {
         this.frase = frase;
     }
 
+    // Método para identificar os emoticons e contar as ocorrências de cada um
     public void contadorDeEmoticon() {
         for (int i = 0; i < this.frase.length(); i++) {
             if (this.frase.charAt(i) == ':') {
@@ -24,6 +25,7 @@ public class Emoticon {
         }
     }
 
+    // Método para verificar e mostrar o resultado da contagem
     public void mostrarResultado() {
         if (divertido > chateado) {
             System.out.println("divertido");

@@ -15,6 +15,7 @@ public class Program {
         List<Filme> filmes;
         int position = 0;
 
+        // Método para inserir os 20 filmes no banco de dados
         insertMovie(filmeController);
 
         System.out.println("Olá! Seja bem-vindo(a)!");
@@ -23,6 +24,7 @@ public class Program {
         System.out.println("Temos 4 páginas. Qual página você quer acessar?");
         int page = sc.nextInt();
 
+        // Switch para identificar em qual posição da lista começa a página
         switch (page) {
             case 1:
                 break;
@@ -41,6 +43,8 @@ public class Program {
 
         List<Filme> list = filmeController.getList();
 
+        // Lógica para exibir os filmes.
+        // A condicional serve para ler os filmes respeitando o tamanho da lista
         if ((position + movie) > list.size()) {
             list.subList(position, list.size()).forEach(System.out::println);
             System.out.println("Você acessou todos os filmes até o final da lista!");
@@ -50,7 +54,7 @@ public class Program {
 
         sc.close();
     }
-
+    
     private static void insertMovie(FilmeController filmeController) {
         filmeController.create(new Filme("Venom - Tempo de Carnificina", "O relacionamento entre Eddie e Venom (Tom Hardy) está evoluindo. Buscando a melhor forma de lidar com a inevitável simbiose, esse dois lados descobrem como viver juntos.", 2021));
         filmeController.create(new Filme("Homem-Aranha: Sem Volta para Casa", "Continuação do filme \"Homem-Aranha: Longe de Casa\", com Tom Holland.", 2021));

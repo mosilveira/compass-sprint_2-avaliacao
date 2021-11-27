@@ -7,6 +7,7 @@ import uol.compass.avaliacao.exercicio_2.model.Filme;
 import java.sql.Connection;
 import java.util.List;
 
+// Camada intermediária para as requisições
 public class FilmeController {
 
     FilmeDAO filmeDAO;
