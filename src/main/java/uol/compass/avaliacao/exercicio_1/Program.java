@@ -1,9 +1,9 @@
 package uol.compass.avaliacao.exercicio_1;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import uol.compass.avaliacao.exercicio_1.controller.ProdutoController;
 import uol.compass.avaliacao.exercicio_1.model.Produto;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
@@ -32,9 +32,16 @@ public class Program {
                 case 2:
                     Produto produto = new Produto("Corretivo", "Corretivo de fita", 50, 11.61);
                     produtoController.update(produto, 1);
+                    System.out.println("Produto atualizado!");
                     break;
                 case 3:
-                    produtoController.remove(2);
+                    List<Produto> produtos = produtoController.getList();
+                    if (produtos.size() > 1) {
+                        Integer id = produtos.get(1).getId();
+                        produtoController.remove(id);
+                    } else {
+                        System.out.println("Operação invalida. Apenas 1 produto cadastrado.");
+                    }
                     break;
                 default:
                     if (choice != 0) {
@@ -43,11 +50,13 @@ public class Program {
             }
 
             System.out.println("\nSituação atual:");
-            produtoController.getList();
+            List<Produto> produtos = produtoController.getList();
+            produtos.forEach(System.out::println);
             System.out.println();
         } while (choice != 0);
 
         System.out.println("Você saiu da aplicação. Até logo! =]");
+
         sc.close();
     }
 }

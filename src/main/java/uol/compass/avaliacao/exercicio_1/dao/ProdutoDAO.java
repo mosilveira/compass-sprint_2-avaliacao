@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProdutoDAO {
 
@@ -16,7 +18,8 @@ public class ProdutoDAO {
     }
 
     // Método para listar todos os produtos cadastrados
-    public void getList() {
+    public List<Produto> getList() {
+        List<Produto> produtos = new ArrayList<>();
         String sql = "SELECT id, nome, descricao, quantidade, preco FROM produtos";
 
         try (PreparedStatement pstm = connection.prepareStatement(sql)) {
@@ -25,7 +28,7 @@ public class ProdutoDAO {
             try (ResultSet rst = pstm.getResultSet()) {
                 while (rst.next()) {
                     Produto produto = new Produto(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getInt(4), rst.getDouble(5));
-                    System.out.println(produto);
+                    produtos.add(produto);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -33,6 +36,7 @@ public class ProdutoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return produtos;
     }
 
     // Método para salvar um cadastro no banco de dados

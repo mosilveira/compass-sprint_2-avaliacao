@@ -23,6 +23,10 @@ public class Produto {
         this.preco = preco;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }
