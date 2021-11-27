@@ -11,6 +11,8 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         Emoticon emoticon = new Emoticon();
 
+        System.out.println("Digite uma frase:");
+
         String frase = sc.nextLine();
 
         emoticon.setFrase(frase);
