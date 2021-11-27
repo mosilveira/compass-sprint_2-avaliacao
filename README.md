@@ -3,8 +3,8 @@
 Avaliação Sprint 2 – Programa de Bolsas SpringBoot
 - Banco de dados: MySql
 - Dependências:
-  - C3P0 <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
-  - MySQL Connector/J <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+  - C3P0: https://mvnrepository.com/artifact/com.mchange/c3p0
+  - MySQL Connector/J: https://mvnrepository.com/artifact/mysql/mysql-connector-java
 
 
 ## Complementos
