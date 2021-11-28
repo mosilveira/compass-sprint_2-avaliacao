@@ -56,6 +56,7 @@ public class Program {
     }
     
     private static void insertMovie(FilmeController filmeController) {
+        filmeController.truncate();
         filmeController.create(new Filme("Venom - Tempo de Carnificina", "O relacionamento entre Eddie e Venom (Tom Hardy) está evoluindo. Buscando a melhor forma de lidar com a inevitável simbiose, esse dois lados descobrem como viver juntos.", 2021));
         filmeController.create(new Filme("Homem-Aranha: Sem Volta para Casa", "Continuação do filme \"Homem-Aranha: Longe de Casa\", com Tom Holland.", 2021));
         filmeController.create(new Filme("Eternos", "Uma tragédia faz com que os Eternos, alienígenas que vivem em segredo na Terra há milhares de anos, saiam das sombras para lutar contra o seu inimigo mais antigo, os Deviantes.", 2021));

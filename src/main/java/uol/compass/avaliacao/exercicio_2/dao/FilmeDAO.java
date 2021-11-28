@@ -52,4 +52,15 @@ public class FilmeDAO {
             throw new RuntimeException(e);
         }
     }
+
+    // Método para limpar a lista antes de inserir os filmes
+    public void truncate() {
+        String sql = "TRUNCATE TABLE filmes";
+
+        try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+            pstm.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

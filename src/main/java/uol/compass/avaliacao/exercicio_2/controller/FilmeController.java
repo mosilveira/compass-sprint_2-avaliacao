@@ -24,4 +24,7 @@ public class FilmeController {
     public void create(Filme filme) {
         this.filmeDAO.create(filme);
     }
+    public void truncate() {
+        this.filmeDAO.truncate();
+    }
 }
